@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Swapper</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Face Swapper</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+      <div class="main-layout">
+        <!-- Left: Large Image for Target and Result -->
+        <div class="large-image-container">
+          <!-- <label for="image1" class="text-muted">Target/Result Image</label> -->
+          <!-- Target image displayed initially, will be replaced by result -->
+          <img id="preview1" src="#" alt="Target Image" style="display:none;">
+        </div>
+
+        <!-- Right: Smaller Previews of Source and Target -->
+        <div class="small-images-container">
+          <!-- Source image preview (top right) -->
+          <div class="small-image-box">
+            <div class="position-corner">
+              <label for="image2">Source Image</label> | 
+              <input type="file" id="image2" style="display:none;" name="image2" accept="image/*" required>
+              <button type="button" class="delete-btn" data-preview-id="preview2" data-input-id="image2">Clear</button>
+            </div>
+            <img id="preview2" src="#" alt="Image to Swap" style="display:none;">
+          </div>
+
+          <!-- Target image preview (bottom right) -->
+          <div class="small-image-box">
+            <div class="position-corner">
+              <label for="image1">Target Image</label> | 
+              <input type="file" id="image1" style="display:none;" name="image1" accept="image/*" required>
+              <button type="button" class="delete-btn" data-preview-id="preview1-target" data-input-id="image1">Clear</button>
+            </div>
+            <img id="preview1-target" src="#" alt="Target Image" style="display:none;">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" id="swap-btn">
+        <span id="swap-btn-text">Swap Faces</span>
+        <span id="swap-spinner" class="spinner" style="display: none;"></span>
+      </button>
+      
+    </form>
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
